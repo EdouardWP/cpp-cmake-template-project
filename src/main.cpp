@@ -1,15 +1,14 @@
 #include "../include/resource.h"
 
 int main() {
-    // Bring the edou namespace into scope
     using namespace edou;
 
-    // Uses unique_ptr in main and demonstrates automatic memory management
+    // Using unique_ptr to show automatic memory management
     std::cout << "Using std::unique_ptr:\n";
     std::unique_ptr<Resource> resource_ptr = create_resource();  
     resource_ptr->do_something();  
 
-    // Resource Automatically destroyed when resource_ptr goes out of scope
+    // Automatically destroy when resource_ptr goes out of scope
     std::cout << "std::unique_ptr going out of scope, resource will be destroyed.\n";
 
     // Compare with raw pointers
